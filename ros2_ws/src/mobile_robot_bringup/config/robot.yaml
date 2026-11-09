@@ -1,0 +1,15 @@
+serial_bridge:
+  ros__parameters:
+    port: /dev/ttyACM0
+    baud: 115200
+safety_gate:
+  ros__parameters:
+    minimum_clearance_cm: 18.0
+wheel_odometry:
+  ros__parameters:
+    wheel_radius_m: 0.0325
+    wheel_base_m: 0.145
+    ticks_per_revolution: 20.0
+barcode_detector:
+  ros__parameters:
+    camera_source: '0'

@@ -8,7 +8,8 @@ Type=simple
 User=robot
 WorkingDirectory=/home/robot/mobile_robot_stack/ros2_ws
 Environment=ROS_DOMAIN_ID=20
-ExecStart=/bin/bash -lc 'source /opt/ros/$ROS_DISTRO/setup.bash && source install/setup.bash && ros2 launch mobile_robot_bringup manual_control.launch.py'
+Environment=ROS_DISTRO=humble
+ExecStart=/bin/bash -lc 'source /opt/ros/$ROS_DISTRO/setup.bash && source install/setup.bash && ros2 launch mobile_robot_bringup robot_bringup.launch.py'
 Restart=on-failure
 RestartSec=3
 

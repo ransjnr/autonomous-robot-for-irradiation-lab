@@ -1,0 +1,11 @@
+# Copy to config/robot.yaml and calibrate from physical measurements. Do not commit secrets.
+serial_port: /dev/serial/by-id/REPLACE_WITH_UNO_OR_ESP32
+camera_source: "0"
+lidar_frame: laser
+base_frame: base_link
+wheel_radius_m: 0.0325
+wheel_base_m: 0.145
+ticks_per_revolution: 20.0
+minimum_clearance_cm: 18.0
+max_linear_mps: 0.35
+max_angular_radps: 1.2

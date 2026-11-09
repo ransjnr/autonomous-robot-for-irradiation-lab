@@ -31,6 +31,8 @@ The `ros2_ws` is at the root because it is the robot's application code. It happ
 
 Read [`docs/HARDWARE_CHECKLIST.md`](docs/HARDWARE_CHECKLIST.md). Do not connect motors or servos to the controller's 5 V rail. Verify the driver type, motor voltage, common ground, wheel encoder wiring, and emergency stop first.
 
+The full baseline component list and electrical limits are in [`hardware/README.md`](hardware/README.md). Follow [`docs/COMMISSIONING.md`](docs/COMMISSIONING.md) in order when the team has the hardware in front of them.
+
 ## Quick start
 
 1. Identify every board and complete [`docs/HARDWARE_CHECKLIST.md`](docs/HARDWARE_CHECKLIST.md).
@@ -40,6 +42,8 @@ Read [`docs/HARDWARE_CHECKLIST.md`](docs/HARDWARE_CHECKLIST.md). Do not connect 
 5. Run the bridge: `ros2 run mobile_robot_bringup serial_bridge --ros-args -p port:=/dev/ttyUSB0`.
 5. Run phone control on the robot computer: `ros2 run mobile_robot_bringup phone_controller`; browse to `http://ROBOT_IP:8080` from the phone.
 6. Run scanning: `ros2 run mobile_robot_bringup barcode_detector --ros-args -p camera_source:=0`; for an ESP32-CAM, use `-p camera_source:=http://ESP32_CAM_IP/capture`.
+
+Before any actuator test, verify the USB connection only: `python3 platforms/raspberry_pi/tools/serial_smoke_test.py --port /dev/ttyACM0`.
 
 Mapping is a separate safety-tested phase: `ros2 launch mobile_robot_bringup mapping.launch.py` after `/scan`, `/odom`, `base_link`, and `laser` are correct. An ultrasonic sensor is for emergency obstacle stopping, **not** room mapping.
 

@@ -5,4 +5,6 @@
 3. Use a stable USB rule or update the serial port in `manual_control.launch.py`; `/dev/ttyACM0` can change after reboot.
 4. Copy `systemd/mobile-robot-manual.service` to `/etc/systemd/system/`, then run `sudo systemctl daemon-reload && sudo systemctl enable --now mobile-robot-manual`.
 
+The service assumes ROS 2 Humble. Change `ROS_DISTRO` in the unit if your Pi runs another supported ROS 2 release.
+
 The phone-control server has no authentication. Put the Pi and phone on a dedicated, trusted Wi-Fi network; do not expose port 8080 to the internet.
