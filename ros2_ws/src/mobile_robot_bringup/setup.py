@@ -1,0 +1,3 @@
+from setuptools import setup
+from glob import glob
+setup(name='mobile_robot_bringup', version='0.1.0', packages=['mobile_robot_bringup'], data_files=[('share/ament_index/resource_index/packages',['resource/mobile_robot_bringup']),('share/mobile_robot_bringup',['package.xml']),('share/mobile_robot_bringup/launch',glob('launch/*.py')),('share/mobile_robot_bringup/config',glob('config/*'))], install_requires=['setuptools'], zip_safe=True, entry_points={'console_scripts':['serial_bridge = mobile_robot_bringup.serial_bridge:main','safety_gate = mobile_robot_bringup.safety_gate:main','wheel_odometry = mobile_robot_bringup.wheel_odometry:main','barcode_detector = mobile_robot_bringup.barcode_detector:main','phone_controller = mobile_robot_bringup.phone_controller:main']})
